@@ -1,0 +1,76 @@
+#include <iostream>
+#include <cstdio>
+#include <cstdlib>
+#include <algorithm>
+#include <cmath>
+#include <vector>
+#include <list>
+#include <set>
+#include <map>
+#include <unordered_set>
+#include <unordered_map>
+#include <queue>
+#include <ctime>
+#include <cassert>
+#include <complex>
+#include <stack>
+#include <string>
+#include <cstring>
+#include <chrono>
+#include <random>
+#include <bitset>
+#include <sstream>
+#include <iomanip>
+using namespace std;
+
+string getConverted(int n)
+{
+    switch (n)
+    {
+    case 1:
+        return "one";
+        break;
+    case 2:
+        return "two";
+        break;
+    case 3:
+        return "three";
+        break;
+    case 4:
+        return "four";
+        break;
+    case 5:
+        return "five";
+        break;
+    case 6:
+        return "six";
+        break;
+    case 7:
+        return "seven";
+        break;
+    case 8:
+        return "eight";
+        break;
+    case 9:
+        return "nine";
+        break;
+    case 0:
+        return "zero";
+        break;
+    }
+    return "";
+}
+
+string changeToSpellings(int n)
+{
+    if (n == 0)
+        return "";
+
+    return changeToSpellings(n / 10) + getConverted(n % 10);
+}
+
+int32_t main()
+{
+    int n = 2048;
+    cout << changeToSpellings(n) << endl;
+}
